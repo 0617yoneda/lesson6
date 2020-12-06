@@ -1,0 +1,21 @@
+<h2>User info</h2>
+ <%= attachment_image_tag user, :profile_image, size: "60x60", format: 'jpeg', fallback: "no_image.jpg" %>
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <td>name</td>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <td>introduction</td>
+      <td><%= user.introduction %></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--編集ボタン-->
+<!--うまく表示されない-->
+<div class="row">
+    <%= link_to "", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+</div>
