@@ -42,21 +42,11 @@
               <% end %>
             </td>
             <td><%= book.body %></td>
-            <td>
-              <% if book.favorited_by?(current_user) %>
-                <p>
-                  <%= link_to book_favorites_path(book), method: :delete do  %>
-                    <i class="far fa-heart"><%= book.favorites.count %></i>
-               　　 <% end %>
-                </p>
-                <% else %>
-                <p>
-                  <%= link_to book_favorites_path(book), method: :post do  %>
-                    <i class="far fa-heart"><%= book.favorites.count %></i>
-                  <% end %>
-                </p>
-              <% end %>
+            <!--部分テンプ-->
+            <td class="favorite-btn">
+             <%= render "favorites/favorite-btn", book: book %>
             </td>
+            <!--部分テンプ-->
             <td><p>コメント数:<%= book.book_comments.count %></p></td>
           </tr>
         <% end %>
