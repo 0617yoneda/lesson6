@@ -1,11 +1,12 @@
 class BookCommentsController < ApplicationController
 
   def create
-    book = Book.find(params[:book_id])
-    @comment = book.book_comments.new(book_comment_params)
+    @book = Book.find(params[:book_id])
+    @comment = @book.book_comments.new(book_comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    @comments = book.book_comments
+    @book.book_comments.count
+    @comments = @book.book_comments
     # redirect_back(fallback_location: root_path)
   end
 
