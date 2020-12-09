@@ -10,6 +10,7 @@ class BookCommentsController < ApplicationController
     # redirect_back(fallback_location: root_path)
   end
 
+
   def destroy
     @comment = BookComment.find_by(book_id: params[:book_id], id: params[:id]).destroy
     # redirect_back(fallback_location: root_path)
